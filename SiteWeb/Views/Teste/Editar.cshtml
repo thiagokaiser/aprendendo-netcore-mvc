@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Editar";
+}
+@model SiteWeb.Models.Teste
+
+<h4 class="title">Tabela Teste</h4>
+
+<form asp-action="Gravar" role="form">
+    <table class="table">
+        <tr><th>Código</th><td><input asp-for="@Model.Id" type="text" class="border-input disabled" readonly value="@Model.Id"></td></tr>
+        <tr><th>Descrição</th><td><input asp-for="@Model.Descricao" type="text" class="border-input" placeholder="Descrição" value="@Model.Descricao"></td></tr>
+        <tr><th>Nome</th><td><input asp-for="@Model.Nome" type="text" class="border-input" placeholder="Nome" value="@Model.Nome"></td></tr>
+        <tr><th>Status</th><td><input asp-for="@Model.Ativo" type="checkbox" class="border-input" value="@Model.Ativo"></td></tr>
+    </table>
+    <p></p>
+
+    <button type="submit" class="btn btn-danger btn-fill btn-wd">Gravar</button>
+    <a class="btn btn-danger btn-icon  btn-fill btn-wd" asp-controller="teste" asp-action="index"><i class="fa fa-undo"></i></a>
+    
+</form>
+ 
