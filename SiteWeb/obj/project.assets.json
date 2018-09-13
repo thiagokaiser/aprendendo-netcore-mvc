@@ -13132,11 +13132,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\thiago.kaiser\\Documents\\Visual Studio 2017\\Projects\\SiteWeb\\SiteWeb\\SiteWeb.csproj",
+      "projectUniqueName": "C:\\DotNet\\SiteWeb\\SiteWeb\\SiteWeb.csproj",
       "projectName": "SiteWeb",
-      "projectPath": "C:\\Users\\thiago.kaiser\\Documents\\Visual Studio 2017\\Projects\\SiteWeb\\SiteWeb\\SiteWeb.csproj",
+      "projectPath": "C:\\DotNet\\SiteWeb\\SiteWeb\\SiteWeb.csproj",
       "packagesPath": "C:\\Users\\thiago.kaiser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thiago.kaiser\\Documents\\Visual Studio 2017\\Projects\\SiteWeb\\SiteWeb\\obj\\",
+      "outputPath": "C:\\DotNet\\SiteWeb\\SiteWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

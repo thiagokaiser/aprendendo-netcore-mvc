@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SiteWeb.Controllers
 {
@@ -16,7 +17,7 @@ namespace SiteWeb.Controllers
 
         public IActionResult Index()
         {
-            var despesa = _crudContext.Despesa.AsNoTracking().ToList();
+            var despesa = _crudContext.Despesa.Include(i => i.Categoria).AsNoTracking().ToList();            
             return View(despesa);
         }
 
@@ -31,6 +32,8 @@ namespace SiteWeb.Controllers
 
         public IActionResult Editar(int id)
         {
+
+            ViewBag.Categoria = _crudContext.Categoria.Select(c => new SelectListItem() { Text = c.Descricao, Value = c.Id.ToString() }).ToList();
             var despesa = _crudContext.Despesa.FirstOrDefault(p => p.Id == id) ?? new Despesa();
 
             return View(despesa);

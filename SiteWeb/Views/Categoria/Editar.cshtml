@@ -3,5 +3,18 @@
     ViewData["Title"] = "Categoria";
 }
 
-<h2>Categoria</h2>
+@model SiteWeb.Models.Categoria
 
+<h4 class="title">Tabela Categoria</h4>
+
+<form asp-action="Gravar" role="form">
+    <table class="table">
+        <tr><th>Código</th><td><input asp-for="@Model.Id" type="text" class="border-input disabled" readonly value="@Model.Id"></td></tr>
+        <tr><th>Descrição</th><td><input asp-for="@Model.Descricao" type="text" class="border-input" placeholder="Descrição" value="@Model.Descricao"></td></tr>        
+    </table>
+    <p></p>
+
+    <button type="submit" class="btn btn-danger btn-fill btn-wd">Gravar</button>
+    <a class="btn btn-danger btn-icon  btn-fill btn-wd" asp-controller="categoria" asp-action="index"><i class="fa fa-undo"></i></a>
+
+</form>
