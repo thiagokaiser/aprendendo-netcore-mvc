@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Despesa";
+}
+
+@model Core.Models.Despesa
+
+<h4 class="title">Tabela Despesa</h4>
+
+<form asp-action="Gravar" role="form">
+    <table class="table">
+        <tr><th>Código</th><td><input asp-for="@Model.Id" type="text" class="border-input disabled" readonly value="@Model.Id"></td></tr>
+        <tr><th>Descrição</th><td><input asp-for="@Model.Descricao" type="text" class="border-input" placeholder="Descrição" value="@Model.Descricao"></td></tr>
+        <tr><th>Valor</th><td><input asp-for="@Model.valor" type="text" class="border-input" placeholder="Nome" value="@Model.valor"></td></tr>
+        <tr><th>Categoria</th><td><select asp-for="@Model.CategoriaId" asp-items="@ViewBag.Categoria" class="form-control border-input"></select></td></tr>
+    </table>
+    <p></p>
+
+    <button type="submit" class="btn btn-danger btn-fill btn-wd">Gravar</button>
+    <a class="btn btn-danger btn-icon  btn-fill btn-wd" asp-controller="despesa" asp-action="index"><i class="fa fa-undo"></i></a>
+
+</form>

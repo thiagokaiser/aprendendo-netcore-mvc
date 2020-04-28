@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@using Core.Models
+@model List<Despesa>
+
+
+<h4 class="title">Lista Despesas</h4>
+<p class="category">
+    <a class="btn btn-sm btn-danger btn-icon" asp-controller="despesa" asp-action="editar" asp-route-id="0"><i class="fa fa-plus"></i></a>
+</p>
+
+<p class="content table-responsive table-full-width">
+    <table class="table table-striped" style="max-width:500px">
+        <thead class="text-primary" style="background-color: beige">
+            <tr>
+                <th>Ação</th>
+                <th>Descrição</th>
+                <th>Nome</th>
+                <th>Ativo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-sm btn-danger btn-icon" asp-controller="despesa" asp-action="editar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o"></i></a>
+                        <a class="btn btn-sm btn-danger btn-icon" asp-controller="despesa" asp-action="excluir" asp-route-id="@item.Id"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                    <td>@item.Descricao</td>
+                    <td>@item.valor</td>
+                    <td>@item.Categoria.Descricao</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
